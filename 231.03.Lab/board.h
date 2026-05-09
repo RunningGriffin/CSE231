@@ -1,6 +1,6 @@
 /***********************************************************************
  * Header File:
- *    BOARD 
+ *    BOARD
  * Author:
  *    <your name here>
  * Summary:
@@ -31,29 +31,29 @@ class Piece;
  **************************************************/
 class Board
 {
-   friend TestPawn;
-   friend TestKnight;
-   friend TestBishop;
-   friend TestRook;
-   friend TestQueen;
-   friend TestKing;
-   friend TestBoard;
+    friend TestPawn;
+    friend TestKnight;
+    friend TestBishop;
+    friend TestRook;
+    friend TestQueen;
+    friend TestKing;
+    friend TestBoard;
 
 public:
 
-   // getters
-   virtual int  getCurrentMove() const { return -99;      }
-   virtual bool whiteTurn()      const { return false;  }
-   virtual void display(const Position& posHover, const Position& posSelect) const {}
-   virtual const Piece& operator [] (const Position& pos) const;
+    // getters
+    virtual int  getCurrentMove() const { return numMoves; }
+    virtual bool whiteTurn()      const { return numMoves % 2 == 0; }
+    virtual void display(const Position& posHover, const Position& posSelect) const {}
+    virtual const Piece& operator [] (const Position& pos) const;
 
-   // setters
-   virtual void move(const Move & move) { }
-   virtual Piece& operator [] (const Position& pos);
+    // setters
+    virtual void move(const Move& move) {}
+    virtual Piece& operator [] (const Position& pos);
 
 protected:
-   int numMoves;
-   Piece * board[8][8];    // the board of chess pieces
+    int numMoves;
+    Piece* board[8][8];    // the board of chess pieces
 };
 
 
@@ -63,26 +63,34 @@ protected:
  **************************************************/
 class BoardDummy : public Board
 {
-   friend TestBoard; 
+    friend TestBoard;
 public:
-   BoardDummy()                                           {                }
-   ~BoardDummy()                                          {                }
+    BoardDummy()
+    {
+        numMoves = 0;
+        for (int c = 0; c < 8; c++)
+            for (int r = 0; r < 8; r++)
+                board[c][r] = nullptr;
+    }
+    ~BoardDummy() {}
 
-   void display(const Position& posHover,
-                const Position& posSelect) const          { assert(false); }
-   void move       (const Move& move)                     { assert(false); }
-   int  getCurrentMove() const                            { assert(false); return 0; }
-   bool whiteTurn()      const                            { assert(false); return false; }
-   Piece& operator [] (const Position& pos)
-   { 
-      assert(false); 
-      throw true;
-   }
-   const Piece& operator [] (const Position& pos) const 
-   { 
-      assert(false); 
-      throw true;
-   }
+    void display(const Position& posHover,
+        const Position& posSelect) const {
+        assert(false);
+    }
+    void move(const Move& move) { assert(false); }
+    int  getCurrentMove() const { assert(false); return 0; }
+    bool whiteTurn()      const { assert(false); return false; }
+    Piece& operator [] (const Position& pos)
+    {
+        assert(false);
+        throw true;
+    }
+    const Piece& operator [] (const Position& pos) const
+    {
+        assert(false);
+        throw true;
+    }
 };
 
 /***************************************************
@@ -93,19 +101,18 @@ public:
  **************************************************/
 class BoardEmpty : public BoardDummy
 {
-   friend TestBoard;
+    friend TestBoard;
 public:
-   Piece * pSpace;
+    Piece* pSpace;
 
-   BoardEmpty();
-   ~BoardEmpty();
-   const Piece& operator [] (const Position& pos) const
-   {
-      assert(pos.isValid());
-      if (board[pos.getCol()][pos.getRow()])
-         return *(board[pos.getCol()][pos.getRow()]);
-      else
-         return *pSpace;
-   }
+    BoardEmpty();
+    ~BoardEmpty();
+    const Piece& operator [] (const Position& pos) const
+    {
+        assert(pos.isValid());
+        if (board[pos.getCol()][pos.getRow()])
+            return *(board[pos.getCol()][pos.getRow()]);
+        else
+            return *pSpace;
+    }
 };
-

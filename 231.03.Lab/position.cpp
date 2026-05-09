@@ -15,7 +15,13 @@
  ******************************************/
 ostream & operator << (ostream & out, const Position & rhs)
 {
-   out << "error";
+   if (rhs.isInvalid())
+   {
+      out << "invalid";
+      return out;
+   }
+   out << (char)('a' + rhs.getCol());
+   out << (char)('1' + rhs.getRow());
    return out;
 }
 

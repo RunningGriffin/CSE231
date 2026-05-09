@@ -23,11 +23,11 @@ Space space;
 ***********************************************/
 const Piece& Board::operator [] (const Position& pos) const
 {
-   return space;
+	return *(board[pos.getCol()][pos.getRow()]);
 }
 Piece& Board::operator [] (const Position& pos)
 {
-   return space;
+	return *(board[pos.getCol()][pos.getRow()]);
 }
 
 
@@ -39,9 +39,9 @@ Piece& Board::operator [] (const Position& pos)
  *********************************************/
 BoardEmpty::BoardEmpty() : BoardDummy(), pSpace(nullptr)
 {
-   pSpace = new Space;
+	pSpace = new Space;
 }
-BoardEmpty::~BoardEmpty() 
+BoardEmpty::~BoardEmpty()
 {
-   delete pSpace;
+	delete pSpace;
 }

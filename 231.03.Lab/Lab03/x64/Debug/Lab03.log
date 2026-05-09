@@ -2,7 +2,6 @@
   main.cpp
   move.cpp
   position.cpp
-  test.cpp
   testBoard.cpp
   testMove.cpp
   testPosition.cpp
