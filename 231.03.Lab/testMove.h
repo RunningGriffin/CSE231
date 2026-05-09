@@ -47,7 +47,10 @@ public:
       read_enpassant();
       read_castleKing();
       read_castleQueen();
+      read_promotion();              // NEW
+      read_promotionCapture();       // NEW
       constructString_simple();
+      constructString_promotion();   // NEW
       assign_simple();
       assign_capture();
       assign_enpassant();
@@ -58,6 +61,7 @@ public:
       getText_enpassant();
       getText_castleKing();
       getText_castleQueen();
+      getText_promotion();           // NEW
 
       report("Move");
    }
@@ -88,7 +92,10 @@ private:
    void read_enpassant();
    void read_castleKing();
    void read_castleQueen();
+   void read_promotion();              // NEW
+   void read_promotionCapture();       // NEW
    void constructString_simple();
+   void constructString_promotion();   // NEW
    void assign_simple();
    void assign_capture();
    void assign_enpassant();
@@ -99,6 +106,5 @@ private:
    void getText_enpassant();
    void getText_castleKing();
    void getText_castleQueen();
-
-
+   void getText_promotion();           // NEW
 };
