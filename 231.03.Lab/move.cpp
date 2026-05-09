@@ -1,12 +1,3 @@
-/***********************************************************************
- * Source File:
- *    MOVE
- * Author:
- *    <your name here>
- * Summary:
- *    Everything we need to know about a single chess move
- ************************************************************************/
-
 #include "move.h"
 #include "pieceType.h"
 #include <cassert>
@@ -45,7 +36,7 @@ char Move::letterFromPieceType(PieceType pt) const
 /***************************************************
  * MOVE : READ
  * Parse a move string like "e5e6", "e5d6r", "e5f6E",
- * "e1g1c", "e1c1C"
+ * "e1g1c", "e1c1C", "a7a8q"
  ***************************************************/
 void Move::read(const string& s)
 {
@@ -69,7 +60,7 @@ void Move::read(const string& s)
         return;
     }
 
-    // parse optional 5th character for move type / capture
+    // parse optional 5th character for move type / capture / promotion
     if (s.size() >= 5)
     {
         char extra = s[4];
@@ -78,18 +69,58 @@ void Move::read(const string& s)
         case 'E':                              // en passant
             moveType = ENPASSANT;
             capture = PAWN;
+            promote = INVALID;
             break;
         case 'c':                              // castle kingside
             moveType = CASTLE_KING;
+            capture = INVALID;
+            promote = INVALID;
             break;
         case 'C':                              // castle queenside
             moveType = CASTLE_QUEEN;
+            capture = INVALID;
+            promote = INVALID;
             break;
-        default:                              // capture — lowercase piece letter
-            capture = pieceTypeFromLetter(extra);
-            moveType = MOVE;
+        default:                              // capture or promotion
+            // Check if this is a promotion (pawn moving to last rank)
+            // Rank 7 (row 7) for white? Actually row 0 = rank 1, row 7 = rank 8
+            // Promotion happens when moving to rank 8 (row 7) or rank 1 (row 0)
+            bool isPromotion = false;
+            
+            // Check if destination is on the last rank (row 7 or row 0)
+            if (dest.getRow() == 7 || dest.getRow() == 0)
+            {
+                // This could be a promotion
+                PieceType promoPiece = pieceTypeFromLetter(extra);
+                if (promoPiece != INVALID)
+                {
+                    promote = promoPiece;
+                    isPromotion = true;
+                }
+            }
+            
+            if (isPromotion)
+            {
+                // This is a promotion move, not a capture (unless also a capture)
+                moveType = MOVE;
+                capture = INVALID;
+                // promote already set above
+            }
+            else
+            {
+                // This is a capture (lowercase piece letter)
+                capture = pieceTypeFromLetter(extra);
+                moveType = MOVE;
+                promote = INVALID;
+            }
             break;
         }
+    }
+    else
+    {
+        // No 5th character - ensure capture and promote are INVALID
+        capture = INVALID;
+        promote = INVALID;
     }
 
     // store the text
@@ -112,12 +143,25 @@ string Move::getText() const
     // optional suffix
     switch (moveType)
     {
-    case ENPASSANT:   s += 'E';  break;
-    case CASTLE_KING: s += 'c';  break;
-    case CASTLE_QUEEN:s += 'C';  break;
+    case ENPASSANT:   
+        s += 'E';  
+        break;
+    case CASTLE_KING: 
+        s += 'c';  
+        break;
+    case CASTLE_QUEEN:
+        s += 'C';  
+        break;
     default:
-        if (capture != INVALID && capture != SPACE)
+        // For MOVE type, check if there's a promotion first
+        if (promote != INVALID && promote != SPACE)
+        {
+            s += letterFromPieceType(promote);
+        }
+        else if (capture != INVALID && capture != SPACE)
+        {
             s += letterFromPieceType(capture);
+        }
         break;
     }
 
