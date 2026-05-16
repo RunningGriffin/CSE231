@@ -16,6 +16,7 @@ using std::ostream;
 using std::istream;
 
 const int SIZE_SQUARE = 32;   // number of pixels in a square by default
+const int OFFSET_BOARD = 50;   // boarder between the board and the edge of screen
 
 /***********************************************
  * DELTA
@@ -34,6 +35,9 @@ const Delta SUB_C = { 0, -1 };
 
 
 class PositionTest;
+class TestKnight;
+class TestBoard;
+class TestMove;
 
 /***************************************************
  * POSITION
@@ -42,11 +46,14 @@ class PositionTest;
 class Position
 {
     friend class PositionTest;
+    friend class TestKnight;
+    friend class TestBoard;
+    friend class TestMove;
 public:
 
     // Position :    The Position class can work with other positions,
     //               Allowing for comparisions, copying, etc.
-    Position(const Position& rhs) { colRow = rhs.colRow; }
+    Position(const Position& rhs) : colRow(rhs.colRow) {}
     Position() : colRow(0xff) {}
     bool isInvalid() const { return (colRow & 0x88) != 0; }
     bool isValid()   const { return !isInvalid(); }
@@ -55,7 +62,7 @@ public:
     bool operator <  (const Position& rhs) const { return colRow < rhs.colRow; }
     bool operator == (const Position& rhs) const { return colRow == rhs.colRow; }
     bool operator != (const Position& rhs) const { return colRow != rhs.colRow; }
-    const Position& operator =  (const Position& rhs) { colRow = rhs.colRow; return *this; }
+    const Position& operator = (const Position& rhs) { colRow = rhs.colRow; return *this; }
 
     // Location : The Position class can work with locations, which
     //            are 0...63 where we start in row 0, then row 1, etc.
@@ -77,7 +84,6 @@ public:
             colRow = 0xff;
     }
 
-
     // Row/Col : The position class can work with row/column,
     //           which are 0..7 and 0...7
     Position(int c, int r) : colRow(0xff)
@@ -85,8 +91,8 @@ public:
         if (c >= 0 && c <= 7 && r >= 0 && r <= 7)
             colRow = (uint8_t)((c << 4) | r);
     }
-    virtual int getCol() const { return isInvalid() ? -1 : (colRow >> 4); }
-    virtual int getRow() const { return isInvalid() ? -1 : (colRow & 0x0f); }
+    virtual int getCol() const { return isInvalid() ? -1 : (int)((colRow & 0xf0) >> 4); }
+    virtual int getRow() const { return isInvalid() ? -1 : (int)((colRow & 0x0f) >> 0); }
     void setRow(int r)
     {
         if (r >= 0 && r <= 7)
@@ -107,7 +113,6 @@ public:
 
     // Text:    The Position class can work with textual coordinates,
     //          such as "d4"
-
     Position(const char* s) : colRow(0xff)
     {
         if (s && s[0] >= 'a' && s[0] <= 'h' && s[1] >= '1' && s[1] <= '8')
@@ -134,6 +139,7 @@ public:
     // Pixels:    The Position class can work with screen coordinates,
     //            a.k.a. Pixels, these are X and Y coordinates. Note that
     //            we need to scale them according to the size of the board.
+
     int getX()   const
     {
         return (int)((double)getCol() * getSquareWidth() + getSquareWidth());
@@ -150,9 +156,9 @@ public:
         bool validR = (r >= 0 && r <= 7);
         if (validC && validR)
             colRow = (uint8_t)((c << 4) | r);
-        else if (validC)   // bad row, good col → col nibble valid, row nibble = 0xf
+        else if (validC)
             colRow = (uint8_t)((c << 4) | 0x0f);
-        else               // bad col (with or without bad row) → 0xff
+        else
             colRow = 0xff;
     }
     double getSquareWidth()  const { return squareWidth; }
@@ -182,35 +188,26 @@ public:
     {
         if (isInvalid()) return;
         int r = getRow() + dRow;
-        if (r < 0 || r > 7)
-            colRow = 0xff;
-        else
-            colRow = (colRow & 0xf0) | (uint8_t)r;
+        if (r < 0 || r > 7) colRow = 0xff;
+        else colRow = (colRow & 0xf0) | (uint8_t)r;
     }
     void adjustCol(int dCol)
     {
         if (isInvalid()) return;
         int c = getCol() + dCol;
-        if (c < 0 || c > 7)
-            colRow = 0xff;
-        else
-            colRow = (colRow & 0x0f) | (uint8_t)(c << 4);
+        if (c < 0 || c > 7) colRow = 0xff;
+        else colRow = (colRow & 0x0f) | (uint8_t)(c << 4);
     }
     const Position& operator += (const Delta& rhs)
     {
         if (isInvalid()) return *this;
         int c = getCol() + rhs.dCol;
         int r = getRow() + rhs.dRow;
-        if (c < 0 || c > 7 || r < 0 || r > 7)
-            colRow = 0xff;
-        else
-            colRow = (uint8_t)((c << 4) | r);
+        if (c < 0 || c > 7 || r < 0 || r > 7) colRow = 0xff;
+        else colRow = (uint8_t)((c << 4) | r);
         return *this;
     }
-    Position operator + (const Delta& rhs) const
-    {
-        return Position(*this, rhs);
-    }
+    Position operator + (const Delta& rhs) const { return Position(*this, rhs); }
 
 private:
     void set(uint8_t colRowNew) { colRow = colRowNew; }

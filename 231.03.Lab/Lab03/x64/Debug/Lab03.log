@@ -1,11 +1,2 @@
-﻿  board.cpp
-  main.cpp
-  move.cpp
-  position.cpp
-  testBoard.cpp
-  testMove.cpp
-  testPosition.cpp
-C:\Users\runni\source\repos\RunningGriffin\CSE231\231.03.Lab\testPosition.cpp(1187,26): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\runni\source\repos\RunningGriffin\CSE231\231.03.Lab\testPosition.cpp(1209,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
+﻿  testKnight.cpp
   Lab03.vcxproj -> C:\Users\runni\source\repos\RunningGriffin\CSE231\231.03.Lab\x64\Debug\Lab03.exe

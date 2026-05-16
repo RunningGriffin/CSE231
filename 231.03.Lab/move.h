@@ -16,6 +16,9 @@
 
 class TestMove;
 class TestBoard;
+class TestKnight;
+class Knight;
+class Board;
 
 /***************************************************
  * MOVE
@@ -28,27 +31,24 @@ public:
 
 	friend TestMove;
 	friend TestBoard;
+	friend TestKnight;
+	friend Knight;
+	friend Board;
 
-	// constructors
+	// constructor
 	Move();
-	Move(const char* s) : Move() { read(s); }
+	Move(const string& rhs) { read(rhs); }
+	bool operator<(const Move& rhs)  const { return dest < rhs.dest; }
+	bool operator==(const Move& rhs)  const { return dest == rhs.dest; }
+	void read(const string& rhs);
+	string getText() const;
+	const Move& operator = (const string& rhs) { read(rhs); return *this; }
+	const Move& operator = (const char* rhs) { read(string(rhs)); return *this; }
 
-	// text
-	void        read(const string& s);
-	string      getText() const;
-	const Move& operator =  (const string& rhs) { read(rhs); return *this; }
-	const Move& operator =  (const char* rhs) { read(string(rhs)); return *this; }
-
-	// operators
-	bool operator == (const Move& rhs) const { return dest == rhs.dest; }
-	bool operator != (const Move& rhs) const { return dest != rhs.dest; }
-	bool operator <  (const Move& rhs) const { return dest < rhs.dest; }
 
 private:
 	char letterFromPieceType(PieceType pt)     const;
 	PieceType pieceTypeFromLetter(char letter) const;
-
-	friend class TestMove;
 
 
 

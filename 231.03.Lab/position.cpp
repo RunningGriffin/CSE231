@@ -10,26 +10,25 @@
 #include "position.h"
 #include <iostream>
 
-/******************************************
- * POSITION INSERTION OPERATOR
- ******************************************/
-ostream & operator << (ostream & out, const Position & rhs)
+ /******************************************
+  * POSITION INSERTION OPERATOR
+  ******************************************/
+ostream& operator << (ostream& out, const Position& rhs)
 {
-   if (rhs.isInvalid())
-   {
-      out << "invalid";
-      return out;
-   }
-   out << (char)('a' + rhs.getCol());
-   out << (char)('1' + rhs.getRow());
-   return out;
+    if (rhs.isInvalid())
+    {
+        out << "invalid";
+        return out;
+    }
+    out << (char)('a' + rhs.getCol());
+    out << (char)('1' + rhs.getRow());
+    return out;
 }
 
 /*************************************
  * POSITION EXTRACTION OPERATOR
  **************************************/
-istream & operator >> (istream & in,  Position & rhs)
+istream& operator >> (istream& in, Position& rhs)
 {
-   return in;   
+    return in;
 }
-

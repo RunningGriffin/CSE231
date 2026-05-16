@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Label="x64" Condition="'$(Platform.ToLower())' == 'x64'">
     <Link>
-      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\glew32.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\glfw3dll.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(MSBuildThisFileDirectory)../..//build/native/lib/x64\glew32.lib;$(MSBuildThisFileDirectory)../..//build/native/lib/x64\freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Label="Win32" Condition="'$(Platform.ToLower())' == 'win32'">

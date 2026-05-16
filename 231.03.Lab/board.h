@@ -1,14 +1,15 @@
 /***********************************************************************
  * Header File:
- *    BOARD
+ *    BOARD 
  * Author:
  *    <your name here>
  * Summary:
- *    A collection of pieces and the state of the board
+ *    A collection of pieces and a small amount of game state
  ************************************************************************/
 
 #pragma once
 
+#include <stack>
 #include <cassert>
 #include "move.h"   // Because we return a set of Move
 
@@ -31,66 +32,70 @@ class Piece;
  **************************************************/
 class Board
 {
-    friend TestPawn;
-    friend TestKnight;
-    friend TestBishop;
-    friend TestRook;
-    friend TestQueen;
-    friend TestKing;
-    friend TestBoard;
-
+   friend TestPawn;
+   friend TestKnight;
+   friend TestBishop;
+   friend TestRook;
+   friend TestQueen;
+   friend TestKing;
+   friend TestBoard;
 public:
 
-    // getters
-    virtual int  getCurrentMove() const { return numMoves; }
-    virtual bool whiteTurn()      const { return numMoves % 2 == 0; }
-    virtual void display(const Position& posHover, const Position& posSelect) const {}
-    virtual const Piece& operator [] (const Position& pos) const;
+   // create and destroy the board
+   Board(ogstream* pgout = nullptr, bool noreset = false);
+   virtual ~Board()   {  }
 
-    // setters
-    virtual void move(const Move& move) {}
-    virtual Piece& operator [] (const Position& pos);
+   // getters
+   virtual int  getCurrentMove() const { return -99;      }
+   virtual bool whiteTurn()      const { return false;  }
+   virtual void display(const Position& posHover, const Position& posSelect) const;
+   virtual const Piece& operator [] (const Position& pos) const;
+
+   // setters
+   virtual void free();
+   virtual void reset(bool fFree = true);
+   virtual void move(const Move & move);
+   virtual Piece& operator [] (const Position& pos);
 
 protected:
-    int numMoves;
-    Piece* board[8][8];    // the board of chess pieces
+   void  assertBoard();
+
+   Piece * board[8][8];    // the board of chess pieces
+   int numMoves;
+
+   ogstream* pgout;
 };
 
 
 /***************************************************
  * BOARD DUMMY BOARD
- * A board double that does nothing but assert. Will need this for unit tests.
+ * A board double that does nothing but assert
  **************************************************/
 class BoardDummy : public Board
 {
-    friend TestBoard;
+   friend TestBoard;
 public:
-    BoardDummy()
-    {
-        numMoves = 0;
-        for (int c = 0; c < 8; c++)
-            for (int r = 0; r < 8; r++)
-                board[c][r] = nullptr;
-    }
-    ~BoardDummy() {}
+   BoardDummy() : Board(nullptr, true /*noreset*/)        {                }
+   ~BoardDummy()                                          {                }
 
-    void display(const Position& posHover,
-        const Position& posSelect) const {
-        assert(false);
-    }
-    void move(const Move& move) { assert(false); }
-    int  getCurrentMove() const { assert(false); return 0; }
-    bool whiteTurn()      const { assert(false); return false; }
-    Piece& operator [] (const Position& pos)
-    {
-        assert(false);
-        throw true;
-    }
-    const Piece& operator [] (const Position& pos) const
-    {
-        assert(false);
-        throw true;
-    }
+   void display(const Position& posHover,
+                const Position& posSelect) const          { assert(false); }
+   void reset(bool fFree = true)                          { assert(false); }
+   void move       (const Move& move)                     { assert(false); }
+   void undo()                                            { assert(false); }
+   int  getCurrentMove() const                            { assert(false); return 0; }
+   bool whiteTurn()      const                            { assert(false); return false; }
+   void free()                                            { assert(false); }
+   Piece& operator [] (const Position& pos)
+   { 
+      assert(false); 
+      throw true;
+   }
+   const Piece& operator [] (const Position& pos) const 
+   { 
+      assert(false); 
+      throw true;
+   }
 };
 
 /***************************************************
@@ -101,18 +106,21 @@ public:
  **************************************************/
 class BoardEmpty : public BoardDummy
 {
-    friend TestBoard;
+   friend TestBoard;
 public:
-    Piece* pSpace;
+   Piece * pSpace;
+   int moveNumber;
 
-    BoardEmpty();
-    ~BoardEmpty();
-    const Piece& operator [] (const Position& pos) const
-    {
-        assert(pos.isValid());
-        if (board[pos.getCol()][pos.getRow()])
-            return *(board[pos.getCol()][pos.getRow()]);
-        else
-            return *pSpace;
-    }
+   BoardEmpty();
+   ~BoardEmpty();
+   const Piece& operator [] (const Position& pos) const
+   {
+      assert(pos.isValid());
+      if (board[pos.getCol()][pos.getRow()])
+         return *(board[pos.getCol()][pos.getRow()]);
+      else
+         return *pSpace;
+   }
+   int  getCurrentMove() const { return moveNumber; }
 };
+

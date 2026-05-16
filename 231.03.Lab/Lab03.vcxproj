@@ -118,7 +118,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -142,25 +142,51 @@
     <ClInclude Include="board.h" />
     <ClInclude Include="move.h" />
     <ClInclude Include="piece.h" />
+    <ClInclude Include="pieceKnight.h" />
+    <ClInclude Include="pieceSpace.h" />
     <ClInclude Include="pieceType.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="testBoard.h" />
+    <ClInclude Include="testKnight.h" />
     <ClInclude Include="testMove.h" />
+    <ClInclude Include="Testpiece.h" />
     <ClInclude Include="testPosition.h" />
+    <ClInclude Include="testSpace.h" />
+    <ClInclude Include="uiDraw.h" />
+    <ClInclude Include="uiInteract.h" />
     <ClInclude Include="unitTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="board.cpp" />
+    <ClCompile Include="chess.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="move.cpp" />
+    <ClCompile Include="piece.cpp" />
+    <ClCompile Include="pieceKnight.cpp" />
     <ClCompile Include="position.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="testBoard.cpp" />
+    <ClCompile Include="testKnight.cpp" />
     <ClCompile Include="testMove.cpp" />
+    <ClCompile Include="Testpiece.cpp" />
     <ClCompile Include="testPosition.cpp" />
+    <ClCompile Include="uiDraw.cpp" />
+    <ClCompile Include="uiInteract.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />
+    <Import Project="packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets" Condition="Exists('packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets'))" />
+    <Error Condition="!Exists('packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets'))" />
+  </Target>
 </Project>
