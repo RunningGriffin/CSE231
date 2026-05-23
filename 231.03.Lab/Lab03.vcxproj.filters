@@ -66,6 +66,36 @@
     <ClInclude Include="uiInteract.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="pieceBishop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceKing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="piecePawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceQueen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pieceRook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testBishop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testKing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testPawn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testQueen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testRook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="board.cpp">
@@ -111,6 +141,36 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="chess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pieceBishop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pieceKing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="piecePawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pieceQueen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pieceRook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testBishop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testKing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testPawn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testQueen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testRook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
