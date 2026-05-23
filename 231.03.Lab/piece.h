@@ -184,7 +184,7 @@ public:
         position = rhs;              // actually change the position
         return *this;                // return self
     }
-    void setLastMove(int currentMove) { lastMove = currentMove; }
+    void setLastMove(int currentMove) { lastMove = currentMove; nMoves++; }
     const Position& getPosition()  const { return position; }
     PieceType getType()            const { return pt; }
     bool isWhite()                 const { return fWhite; }

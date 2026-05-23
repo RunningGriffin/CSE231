@@ -60,9 +60,9 @@ void testRunner()
 	TestKnight().run();
 
 	// Lab 05
-	//TestPawn().run();      
-	//TestQueen().run();
-	//TestRook().run();
-	//TestBishop().run();
-	//TestKing().run();
+	TestPawn().run();      
+	TestQueen().run();
+	TestRook().run();
+	TestBishop().run();
+	TestKing().run();
 }

@@ -2,7 +2,7 @@
  * Header File:
  *    ROOK
  * Author:
- *    Your Name Here
+ *    <your name here>
  * Summary:
  *    The ROOK class
  ************************************************************************/
@@ -11,7 +11,20 @@
 
 #include "piece.h"
 
+class TestRook;
+
 /***************************************************
  * ROOK
- * The rook, aka "Castle"
+ * The rook, slides horizontally and vertically
  ***************************************************/
+class Rook : public Piece
+{
+	friend TestRook;
+public:
+	Rook(const Position& pos, bool isWhite) : Piece(pos, isWhite) {}
+	Rook(int c, int r, bool isWhite) : Piece(c, r, isWhite) {}
+	~Rook() {}
+	PieceType getType()                         const { return ROOK; }
+	void getMoves(set<Move>& moves, const Board& board) const;
+	void display(ogstream* pgout)               const;
+};

@@ -1,2 +1,20 @@
-﻿  testKnight.cpp
+﻿  Testpiece.cpp
+  board.cpp
+  chess.cpp
+  piece.cpp
+  pieceBishop.cpp
+  pieceKing.cpp
+  pieceKnight.cpp
+  piecePawn.cpp
+  pieceQueen.cpp
+  pieceRook.cpp
+  test.cpp
+  testBishop.cpp
+  testBoard.cpp
+  testKing.cpp
+  testKnight.cpp
+  testPawn.cpp
+  testQueen.cpp
+  testRook.cpp
+  Generating Code...
   Lab03.vcxproj -> C:\Users\runni\source\repos\RunningGriffin\CSE231\231.03.Lab\x64\Debug\Lab03.exe

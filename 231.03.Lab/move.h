@@ -17,7 +17,17 @@
 class TestMove;
 class TestBoard;
 class TestKnight;
+class TestBishop;
+class TestRook;
+class TestQueen;
+class TestKing;
+class TestPawn;
 class Knight;
+class Bishop;
+class Rook;
+class Queen;
+class King;
+class Pawn;
 class Board;
 
 /***************************************************
@@ -32,7 +42,17 @@ public:
 	friend TestMove;
 	friend TestBoard;
 	friend TestKnight;
+	friend TestBishop;
+	friend TestRook;
+	friend TestQueen;
+	friend TestKing;
+	friend TestPawn;
 	friend Knight;
+	friend Bishop;
+	friend Rook;
+	friend Queen;
+	friend King;
+	friend Pawn;
 	friend Board;
 
 	// constructor

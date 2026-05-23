@@ -49,6 +49,12 @@ class Position
     friend class TestKnight;
     friend class TestBoard;
     friend class TestMove;
+    friend class TestBishop;
+    friend class TestRook;
+    friend class TestQueen;
+    friend class TestKing;
+    friend class TestPawn;
+    friend class TestSpace;
 public:
 
     // Position :    The Position class can work with other positions,

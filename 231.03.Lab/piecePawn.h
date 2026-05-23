@@ -2,7 +2,7 @@
  * Header File:
  *    PAWN
  * Author:
- *    Your Name Here
+ *    <your name here>
  * Summary:
  *    The pawn class
  ************************************************************************/
@@ -11,7 +11,20 @@
 
 #include "piece.h"
 
+class TestPawn;
+
 /***************************************************
  * PAWN
- * The lonely pawn
+ * The pawn - moves forward, captures diagonally
  ***************************************************/
+class Pawn : public Piece
+{
+	friend TestPawn;
+public:
+	Pawn(const Position& pos, bool isWhite) : Piece(pos, isWhite) {}
+	Pawn(int c, int r, bool isWhite) : Piece(c, r, isWhite) {}
+	~Pawn() {}
+	PieceType getType()                         const { return PAWN; }
+	void getMoves(set<Move>& moves, const Board& board) const;
+	void display(ogstream* pgout)               const;
+};

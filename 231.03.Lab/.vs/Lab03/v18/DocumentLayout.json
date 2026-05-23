@@ -1,12 +1,259 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piece.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:piece.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:testBoard.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:testBoard.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testPawn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:testPawn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piecePawn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:piecePawn.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piecePawn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:piecePawn.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\move.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:move.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBishop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:testBishop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\pieceBishop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:pieceBishop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\pieceBishop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C0E5B184-2289-4E57-A933-F0F681D610F2}|Lab03.vcxproj|solutionrelative:pieceBishop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\test.cpp",
+              "RelativeDocumentMoniker": "test.cpp",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\test.cpp",
+              "RelativeToolTip": "test.cpp",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAEEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-23T08:48:07.238Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "piece.h",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piece.h",
+              "RelativeDocumentMoniker": "piece.h",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piece.h",
+              "RelativeToolTip": "piece.h",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAYwOcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-23T09:24:16.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "testBoard.cpp",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBoard.cpp",
+              "RelativeDocumentMoniker": "testBoard.cpp",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBoard.cpp",
+              "RelativeToolTip": "testBoard.cpp",
+              "ViewState": "AgIAAKECAAAAAAAAAAAYwMECAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-23T09:24:02.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "testBoard.h",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBoard.h",
+              "RelativeDocumentMoniker": "testBoard.h",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBoard.h",
+              "RelativeToolTip": "testBoard.h",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwD4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-23T09:23:45.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "board.cpp",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\board.cpp",
+              "RelativeDocumentMoniker": "board.cpp",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\board.cpp",
+              "RelativeToolTip": "board.cpp",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAYwOIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-23T09:23:30.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "board.h",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\board.h",
+              "RelativeDocumentMoniker": "board.h",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\board.h",
+              "RelativeToolTip": "board.h",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAYwHgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-23T09:23:16.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "testPawn.cpp",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testPawn.cpp",
+              "RelativeDocumentMoniker": "testPawn.cpp",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testPawn.cpp",
+              "RelativeToolTip": "testPawn.cpp",
+              "ViewState": "AgIAAD0BAAAAAAAAAAAYwJYBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-23T09:12:21.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "piecePawn.cpp",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piecePawn.cpp",
+              "RelativeDocumentMoniker": "piecePawn.cpp",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piecePawn.cpp",
+              "RelativeToolTip": "piecePawn.cpp",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwH0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-23T09:12:04.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "piecePawn.h",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piecePawn.h",
+              "RelativeDocumentMoniker": "piecePawn.h",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\piecePawn.h",
+              "RelativeToolTip": "piecePawn.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-23T09:10:09.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "position.h",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\position.h",
+              "RelativeDocumentMoniker": "position.h",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\position.h",
+              "RelativeToolTip": "position.h",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAYwOMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-23T08:47:21.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "move.h",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\move.h",
+              "RelativeDocumentMoniker": "move.h",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\move.h",
+              "RelativeToolTip": "move.h",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwFEAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-23T08:47:09.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "testBishop.cpp",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBishop.cpp",
+              "RelativeDocumentMoniker": "testBishop.cpp",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\testBishop.cpp",
+              "RelativeToolTip": "testBishop.cpp",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAYwOUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-23T08:46:44.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "pieceBishop.cpp",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\pieceBishop.cpp",
+              "RelativeDocumentMoniker": "pieceBishop.cpp",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\pieceBishop.cpp",
+              "RelativeToolTip": "pieceBishop.cpp",
+              "ViewState": "AgIAABQAAAAAAAAAAAAYwDcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-05-23T08:46:22.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "pieceBishop.h",
+              "DocumentMoniker": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\pieceBishop.h",
+              "RelativeDocumentMoniker": "pieceBishop.h",
+              "ToolTip": "C:\\Users\\runni\\source\\repos\\RunningGriffin\\CSE231\\231.03.Lab\\pieceBishop.h",
+              "RelativeToolTip": "pieceBishop.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-05-23T08:45:47.294Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
